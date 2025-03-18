@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.appsv.cricketteamsranking.core.presentation.ui.theme.CricketTeamsRankingTheme
+import com.appsv.cricketteamsranking.team_ranking.data.repository.TeamRankingUIImpl
+import com.appsv.cricketteamsranking.team_ranking.domain.model.TeamRankingUI
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +21,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CricketTeamsRankingTheme {
+                TeamRankingUIImpl().getTeamRankingByTypeAndGender("ODI","women")
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
                         name = "Android",

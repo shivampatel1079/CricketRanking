@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.appsv.cricketteamsranking"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.appsv.cricketteamsranking"

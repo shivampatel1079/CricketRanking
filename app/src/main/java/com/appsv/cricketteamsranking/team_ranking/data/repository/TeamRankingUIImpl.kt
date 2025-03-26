@@ -29,13 +29,8 @@ class TeamRankingUIImpl : TeamRanking {
                 ) {
                     try {
                         if (response.isSuccessful){
-                            val data = response.body()?.data
-                            data?.forEach{data->
-                                data.team.forEach{
-                                    Log.d("Shivam", data.team.size.toString())
-                                    Log.d("Shivam", it.toString())
-                                }
-                            }
+                            val data = response.body()
+
                         }
                     }
                     catch (e: Exception){}

@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CricketTeamsRankingTheme {
-                TeamRankingUIImpl().getTeamRankingByTypeAndGender("ODI","women")
+                TeamRankingUIImpl().getTeamRankingByTypeAndGender("T20I","women")
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
                         name = "Android",

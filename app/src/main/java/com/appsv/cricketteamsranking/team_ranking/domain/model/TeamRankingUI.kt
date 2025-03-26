@@ -8,7 +8,7 @@ data class TeamRankingUI(
     val gender : String,
     val updateAt : String,
     val name : String,
-    val code : String,
+
     val image_path : String,
     val ranking : Ranking,
 

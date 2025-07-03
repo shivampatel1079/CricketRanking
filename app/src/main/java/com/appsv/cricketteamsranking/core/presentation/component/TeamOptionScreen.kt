@@ -31,12 +31,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.appsv.cricketteamsranking.R
 import com.appsv.cricketteamsranking.core.util.cricketTypeAndGender
+import com.appsv.cricketteamsranking.team_ranking.domain.model.CricketFormat
 import com.appsv.cricketteamsranking.team_ranking.presentation.team_options_screen.components.CricketFormatItems
 
-@Preview
+
 @Composable
 fun TeamOptionScreen(
     modifier: Modifier = Modifier,
+    onItemClicked : (type:String, gender:String) -> Unit
 ) {
 
     Column(
@@ -69,7 +71,9 @@ fun TeamOptionScreen(
                     horizontalArrangement = Arrangement.spacedBy(30.dp)
                 ) {
                     items(cricketTypeAndGender){
-                        CricketFormatItems(it)
+                        CricketFormatItems(it){type, gender ->
+                            onItemClicked(type, gender)
+                        }
                     }
                 }
             }

@@ -29,7 +29,6 @@ import com.appsv.cricketteamsranking.R
 import com.appsv.cricketteamsranking.team_ranking.domain.model.CricketFormat
 
 
-@Preview
 @Composable
 fun CricketFormatItems(
     format: CricketFormat=
@@ -37,6 +36,8 @@ fun CricketFormatItems(
             cricketFormat = "T20I",
             isMen = true
         )
+    ,
+    onItemClicked : (type:String, gender:String) -> Unit
 ){
     val mainColor = if (format.isMen) Color.Blue else colorResource(R.color.hard_pink)
     val itemBackground = colorResource(if (format.isMen)R.color.light_blue1 else R.color.light_pink1)
@@ -48,7 +49,12 @@ fun CricketFormatItems(
             .clip(RoundedCornerShape(10.dp))
             .border(1.dp,mainColor, RoundedCornerShape(10.dp))
             .background(itemBackground)
-            .clickable { }
+            .clickable {
+                onItemClicked(
+                    format.cricketFormat,
+                    if (format.isMen) "men" else "women"
+                )
+            }
     ) {
         Column(
             modifier = Modifier.padding(10.dp)

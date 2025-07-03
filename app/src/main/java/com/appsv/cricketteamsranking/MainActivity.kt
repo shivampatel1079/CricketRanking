@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.tooling.preview.Preview
+import com.appsv.cricketteamsranking.core.presentation.app_navigation.SetUpNavGraph
 import com.appsv.cricketteamsranking.core.presentation.component.TeamOptionScreen
 import com.appsv.cricketteamsranking.core.presentation.ui.theme.CricketTeamsRankingTheme
 import com.appsv.cricketteamsranking.team_ranking.data.repository.TeamRankingImpl
@@ -30,7 +31,7 @@ class MainActivity : ComponentActivity() {
         )
         setContent {
             CricketTeamsRankingTheme {
-                TeamOptionScreen()
+                SetUpNavGraph()
             }
         }
     }
